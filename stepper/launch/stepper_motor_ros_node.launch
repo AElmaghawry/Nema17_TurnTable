@@ -1,0 +1,13 @@
+<launch>
+  <node pkg="rosserial_python" type="serial_node.py" name="serial_node">
+    <param name="port" value="/dev/ttyUSB1" /> <!-- Change this line to your Arduino's serial port -->
+    <param name="baud" value="115200" />
+  </node>
+
+  <node name="stepper_motor_node" type="stepper_motor_node.py" pkg="stepper" output="screen">
+    <!-- <rosparam command="load" file="$(find stepper)/config/stepper_motor_params.yaml" /> -->
+   <rosparam command="load" file="$(find stepper)/params/stepper_motor_params.yaml"/>
+
+
+  </node>
+</launch>

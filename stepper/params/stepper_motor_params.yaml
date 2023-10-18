@@ -1,0 +1,3 @@
+stepper_motor:
+  steps_per_revolution: 200   # Number of steps per revolution of your stepper motor
+  rotation_speed: 10          # Rotation speed of the motor (in RPM)

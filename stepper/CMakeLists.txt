@@ -11,6 +11,8 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  message_runtime
+  message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -52,14 +54,17 @@ find_package(catkin REQUIRED COMPONENTS
 #   Message1.msg
 #   Message2.msg
 # )
-
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
-
+add_service_files(
+  FILES
+  Rotate_motor.srv
+  # Service2.srv
+  )
+  
+  generate_messages(
+    DEPENDENCIES
+    std_msgs
+  )
 ## Generate actions in the 'action' folder
 # add_action_files(
 #   FILES
@@ -204,3 +209,4 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
